@@ -29,8 +29,7 @@ class Card extends Component{
          <article className=''>
         <img src={this.props.fotoPeli} alt="" />
             <h2> {this.props.tituloPeli} </h2>
-            <p> {this.props.detallePeli} </p>
-            <p className={this.state.clase}> {this.state.detallePeli} </p>
+            <p className={this.state.clase}> {this.props.detallePeli} </p>
             <a onClick={()=> this.cambiarTexto()}> {this.state.texto} </a>
             <p className='fav'>Favoritos</p>
          </article>
