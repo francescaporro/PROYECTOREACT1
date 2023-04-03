@@ -37,6 +37,7 @@
     color: #777;
     text-decoration: none;
     cursor: pointer;
+    font-family: 'Helvetica Neue';
   }
   
   .watch-display .show {
