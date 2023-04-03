@@ -26,7 +26,7 @@ class Card extends Component{
     render()
     {return (
       
-         <article className=''>
+         <article className='watch-display'>
         <img src={this.props.fotoPeli} alt="" />
             <h2> {this.props.tituloPeli} </h2>
             <p className={this.state.clase}> {this.props.detallePeli} </p>
