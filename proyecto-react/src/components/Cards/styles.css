@@ -6,3 +6,10 @@ p.hidden {
 p.show {
     display: block;
 }
+
+.cardContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
