@@ -25,6 +25,7 @@ class Card extends Component{
         }
     render()
     {return (
+
       
          <article className='watch-display'>
         <img src={this.props.fotoPeli} alt="" />
@@ -33,6 +34,7 @@ class Card extends Component{
             <a onClick={()=> this.cambiarTexto()}> {this.state.texto} </a>
             <p className='fav'>Favoritos</p>
          </article>
+         
      
     )
   }
