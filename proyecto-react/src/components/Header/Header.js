@@ -12,7 +12,8 @@ import './styles.css'
                     <ul>
                         <li> <Link to = "/">Home</Link></li>
                         <li> <Link to = "/Favoritos">Favoritos</Link></li>
-                        <li> <Link to = "/VerMas">Ver Todas</Link></li>
+                        <li> <Link to = "/todasCartel">Peliculas en cartel</Link></li>
+                        <li> <Link to = "/todasPopus">Peliculas Populares</Link></li>
                     </ul>
             </header>
         )

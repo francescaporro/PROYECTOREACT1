@@ -45,7 +45,7 @@ class Cards extends Component{
         console.log(this.state.peliculas)
         return(
             <>
-            <h1>PELICULAS MÁS POPULARES</h1>
+           
             <section className='cardContainer'>
 
                 {
