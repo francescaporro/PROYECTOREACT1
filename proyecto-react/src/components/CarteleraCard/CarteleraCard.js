@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './styles.css';
 
-class Card extends Component{
+class CarteleraCard extends Component{
     constructor(props){
         super(props)
         this.state={
@@ -25,7 +25,7 @@ class Card extends Component{
         }
     render()
     {return (
-       
+
          <article className='watch-display'>
         <img src={this.props.fotoPeli} alt="" />
             <h2> {this.props.tituloPeli} </h2>
@@ -34,10 +34,9 @@ class Card extends Component{
             <p className='fav'>Favoritos</p>
          </article>
          
-         
      
     )
   }
 }
 
-  export default Card
+  export default CarteleraCard

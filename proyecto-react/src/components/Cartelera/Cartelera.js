@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import './styles.css';
-import Card from '../Card/Card'
+import CarteleraCard from '../CarteleraCard/CarteleraCard'
 
 
-class Cards extends Component {
+class Cartelera extends Component {
     //1 que se ejecuta
     constructor(props) {
         super(props)
         this.state = {
             numero: 1,
             peliculas: [],
+           
         }
     }
- 
+  
 
     //5 que se ejecuta tras ocurrir actualización
     componentDidUpdate() {
@@ -31,6 +32,8 @@ class Cards extends Component {
         })
     }
 
+
+
     //2 que se ejecuta
     //4 que se ejecuta si ocurre actualización
     render() {
@@ -38,20 +41,22 @@ class Cards extends Component {
         return (
            
             <>
-   
+               
             <section className='cardContainer'>
                 {this.props.peliculas.length <= 0 ?
-                    <h2>Cargando...</h2>
+                    <h2>Caragando...</h2>
                     :
                     <div>
                         {this.props.peliculas.map((unaPeli, idx) => (
-                            <Card
+                            <CarteleraCard
                                 fotoPeli={`https://image.tmdb.org/t/p/w500${unaPeli.poster_path}`}
                                 tituloPeli={unaPeli.original_title}
                                 detallePeli={unaPeli.overview}
                                 onClick={this.actualizarEstado}
                                 key={unaPeli.original_title + idx}
+                                
                             />
+                            
                         ))}
                         
                     </div>
@@ -63,4 +68,4 @@ class Cards extends Component {
     }
 }
 
-export default Cards
+export default Cartelera
