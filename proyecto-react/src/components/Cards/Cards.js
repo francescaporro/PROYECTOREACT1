@@ -42,7 +42,7 @@ class Cards extends Component{
     //2 que se ejecuta
     //4 que se ejecuta si ocurre actualización
     render(){
-        console.log(this.state.peliculas)
+        console.log('https://api.themoviedb.org/3/movie/popular?api_key=5879ede367a1cc1dbb7ecaf35f419c29')
         return(
             <>
            
