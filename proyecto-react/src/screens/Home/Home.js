@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Cards from '../../components/Cards/Cards'
 import Cartelera from '../../components/Cartelera/Cartelera'
+import Buscador from '../../components/Buscador/Buscador'
 import { Link } from 'react-router-dom'
 
 class Home extends Component {
@@ -30,6 +31,9 @@ class Home extends Component {
     render() {
         return (
             <>
+            <div>
+            <Buscador/>
+            </div>
                 <div className="App">
                     <h1>PELICULAS MÁS POPULARES</h1>
                     <button> <Link to='/todasPopus'> Ver todas </Link></button>
