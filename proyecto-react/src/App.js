@@ -9,6 +9,7 @@ import NotFound from './screens/NotFound/NotFound';
 import TodasCartel from './screens/todasCartel/todasCartel';
 import todasPopus from './screens/todasPopus/todasPopus';
 import Detalle from './screens/Detalle/Detalle';
+import Buscador from './components/Buscador/Buscador'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     <Route path='/todasPopus'  component={todasPopus}/>
     <Route path='/todasCartel'  component={TodasCartel}/>
     <Route path='/Detalle/id/:id' component={Detalle}/>
+    <Route path="/resultados/:title" component={Buscador} />
     <Route component={NotFound}/>
     </Switch>
    

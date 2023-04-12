@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Buscador extends Component {
     constructor(props){
@@ -20,9 +21,16 @@ class Buscador extends Component {
     
     render() {
         return (
-            <form onSubmit={(event)=>this.evitarSubmit(event)}>
-                <input onChange={(event)=>this.guardarValor(event)} value={this.state.valorInput}/>
-                <button>Enviar consulta</button>
+            <form onSubmit={(event) => this.evitarSubmit(event)}>
+                <input onChange={(event) => this.guardarValor(event)} value={this.state.valorInput} />
+                {
+                    this.state.valorInput ?
+                        <Link to={`/resultados/${this.state.valorInput}`}>
+                            <input type='submit' value='submit' />
+                        </Link>
+                        :
+                        <input type='submit' value='submit' />
+                }
             </form>
         )
     }
