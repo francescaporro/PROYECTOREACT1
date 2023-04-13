@@ -5,7 +5,7 @@ export default class Detalle extends Component {
         super(props)
         this.state= {
             id: this.props.match.params.id,
-            detalle: ''
+            detalle: {}
         }
     }
     componentDidMount(){
@@ -23,8 +23,12 @@ export default class Detalle extends Component {
                 this.state.detalle === '' ?
                 <h1>Cargando detalle</h1>
                 :
+               <section>
                 <h2>{this.state.detalle.title}</h2>
-            }
+                <img src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} />
+                    
+            </section>
+                  }
             </div>
         )
     }

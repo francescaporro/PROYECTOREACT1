@@ -14,8 +14,8 @@ class Resultados extends Component {
   evitarSubmit(event) {
     event.preventDefault();
     // Realizar la búsqueda con el término de búsqueda ingresado
-    const resultados = this.props.datos.filter(
-      (dato) => dato.valorInput.toLowerCase().includes(this.state.valorInput.toLowerCase()) //esto esta mal pero no se bien que hacer 
+    const resultados = this.state.datos.filter(
+      dato => dato.valorInput.toLowerCase().includes(this.state.valorInput.toLowerCase()) //esto esta mal pero no se bien que hacer 
     );
     // Actualizar el estado con los resultados de la búsqueda
     this.setState({ resultados: resultados });
