@@ -44,7 +44,7 @@ class Home extends Component {
             <>
             <div>
             <Buscador 
-            actualizador={(data) => console.log('hola')}
+            actualizador={(data) => this.actualizadorDeEstado(data)}
             fuente= {this.state.backup}/>
 
             </div>
