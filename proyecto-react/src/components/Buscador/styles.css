@@ -1,0 +1,37 @@
+.search-box {
+    display: flex;
+    transform: translate(-50%, -50%);
+    background: #171718;
+    height: 40px;
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 45px;
+    width: 100px;
+}
+
+
+.search-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    color: whitesmoke;
+}
+
+.search-box:hover>.search-txt {
+    width: 100px;
+    padding: 0 6px;
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 30px;
+    width: 200px;
+}

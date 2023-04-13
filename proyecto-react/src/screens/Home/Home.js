@@ -4,6 +4,7 @@ import Cartelera from '../../components/Cartelera/Cartelera'
 import TvCards from '../../components/TvCards/TvCards'
 import Buscador from '../../components/Buscador/Buscador'
 import { Link } from 'react-router-dom'
+import "./styles.css"
 
 class Home extends Component {
     constructor(props) {
@@ -17,7 +18,8 @@ class Home extends Component {
     
     actualizadorDeEstado(data){
         this.setState({
-            peliculas: data
+            peliculas: data,
+            series: data
         })
     }
 
@@ -62,7 +64,8 @@ class Home extends Component {
                 <div className="App">
                     <h1>PELICULAS MÁS POPULARES</h1>
                     <button> <Link to='/todasPopus'> Ver todas </Link></button>
-                    <Cards peliculas={this.state.peliculas}/>
+                    <Cards peliculas={this.state.peliculas}/> 
+                    
                 </div>
                 <div className="App">
                     <h1>CARTELERA</h1>

@@ -1,0 +1,6 @@
+.cardContainers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #0b022d;
+}

@@ -1,16 +1,15 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
 
 p.hidden {
     display: none;
 }
 
+
 p.show {
     display: block;
-}
-
-.cardContainer{
-    display: flex;
-    
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
 }

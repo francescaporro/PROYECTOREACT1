@@ -14,7 +14,11 @@ class Buscador extends Component {
         event.preventDefault()
     }
     metodoQueFiltra(texto, arrayFuente){
-        let filtrado = arrayFuente.filter((elm)=>elm.original_title.toLowerCase().includes(texto.toLowerCase()))
+        
+        let filtrado = arrayFuente.filter((elm)=> elm.original_title ? elm.original_title.toLowerCase().includes(texto.toLowerCase()) : 
+        elm.original_name.toLowerCase().includes(texto.toLowerCase()))
+
+        
         return filtrado
     }
 
