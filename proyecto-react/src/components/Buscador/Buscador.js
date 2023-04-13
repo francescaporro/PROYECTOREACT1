@@ -9,28 +9,32 @@ class Buscador extends Component {
         }
     }
 
+    
     evitarSubmit(event){
         event.preventDefault()
     }
+    metodoQueFiltra(texto, arrayFuente){
+        let filtrado = arrayFuente.filter((elm)=>elm.name.toLowerCase().includes(texto.toLowerCase()))
+        return filtrado
+    }
+
     guardarValor(event){
         this.setState(
-            {valorInput: event.target.value}
+            {valorInput: event.target.value}, () => {
+                let filtro= this.metodoQueFiltra(this.state.valorInput, this.props.fuente)
+                this.props.actualizador(filtro)
+            }
         )
     }
     
     
     render() {
+        console.log(this.props)
         return (
             <form onSubmit={(event) => this.evitarSubmit(event)}>
                 <input onChange={(event) => this.guardarValor(event)} value={this.state.valorInput} />
-                {
-                    this.state.valorInput ?
-                        <Link to={`/resultados/${this.state.valorInput}`}>
-                            <input type='submit' value='submit' />
-                        </Link>
-                        :
-                        <input type='submit' value='submit' />
-                }
+                     <input type='submit' value='submit' />
+                
             </form>
         )
     }

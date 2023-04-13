@@ -9,21 +9,9 @@ class Cards extends Component {
         super(props)
         this.state = {
             numero: 1,
-            peliculas: [],
         }
     }
- 
 
-    //5 que se ejecuta tras ocurrir actualización
-    componentDidUpdate() {
-        console.log('Me actualice y pase por el didUpdate')
-
-    }
-
-    //Este es el ultimo que se ejecuta
-    componentWillUnmount() {
-
-    }
 
     actualizarEstado() {
         this.setState({
