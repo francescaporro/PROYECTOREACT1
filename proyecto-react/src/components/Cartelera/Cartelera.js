@@ -18,7 +18,7 @@ class Cartelera extends Component {
         this.setState({
             numero: this.state.numero + 1
         })
-    }
+    } 
 
 
 
@@ -42,7 +42,7 @@ class Cartelera extends Component {
                                 detallePeli={unaPeli.overview}
                                 onClick={this.actualizarEstado}
                                 key={unaPeli.original_title + idx}
-                                
+                                id={unaPeli.id}
                             />
                             
                         ))}

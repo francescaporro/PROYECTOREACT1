@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './styles.css';
+import {Link} from 'react-router-dom'
 
 class CarteleraCard extends Component{
     constructor(props){
@@ -26,13 +27,15 @@ class CarteleraCard extends Component{
     render()
     {return (
 
+        <Link to={`/detalle/id/${this.props.id}`}>
          <article className='watch-display'>
         <img src={this.props.fotoPeli} alt="" />
             <h2> {this.props.tituloPeli} </h2>
             <p className={this.state.clase}> {this.props.detallePeli} </p>
             <a onClick={()=> this.cambiarTexto()}> {this.state.texto} </a>
             <p className='fav'>Favoritos</p>
-         </article>
+         </article> 
+         </Link>
          
      
     )

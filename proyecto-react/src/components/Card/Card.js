@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './styles.css';
 import {Link} from 'react-router-dom'
-//  <Link  to={`/detalle/id/${this.props.data.id}`}>ir a detalle</Link>
+
 class Card extends Component{
     constructor(props){
         super(props)
@@ -26,7 +26,8 @@ class Card extends Component{
         }
     render()
     {return (
-       
+        
+        <Link to={`/detalle/id/${this.props.id}`}>
          <section  className='watch-display'>
        
         <img src={this.props.fotoPeli} alt="" />
@@ -36,6 +37,7 @@ class Card extends Component{
             <p className='fav'>Favoritos</p>
       
          </section>
+         </Link>
          
          
      

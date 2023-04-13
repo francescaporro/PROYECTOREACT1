@@ -39,6 +39,7 @@ class Cards extends Component {
                                 detallePeli={unaPeli.overview}
                                 onClick={this.actualizarEstado}
                                 key={unaPeli.original_title + idx}
+                                id={unaPeli.id}
                             />
                         ))}
                         
