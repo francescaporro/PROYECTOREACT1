@@ -9,7 +9,8 @@ p.show {
 
 .cardContainer{
     display: flex;
-    flex-direction: row;
+    
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Cartelera from '../../components/Cartelera/Cartelera'
+import Buscador from '../../components/Buscador/Buscador'
 
 
 class TodasCartel extends Component {
@@ -7,9 +8,16 @@ class TodasCartel extends Component {
         super(props)
         this.state = {
             page: 1, // definir el estado de la página actual
-            peliculas: [] // definir un estado para almacenar las películas
+            peliculas: [], // definir un estado para almacenar las películas
+            backup:[]
         }
         this.traerMas = this.traerMas.bind(this) // enlazar el this para la función traerMas
+    }
+
+    actualizadorDeEstado(data){
+        this.setState({
+            peliculas: data
+        })
     }
 
     componentDidMount() {
@@ -17,7 +25,8 @@ class TodasCartel extends Component {
         fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=eb09954096929ff16616027732037e32&language=en-US&page=${this.state.page}`)
             .then(res => res.json())
             .then(data => this.setState({
-                peliculas: data.results
+                peliculas: data.results, 
+                backup: data.results
             }))
             .catch(error => console.error(error))
     }
@@ -36,11 +45,18 @@ class TodasCartel extends Component {
     render() {
         console.log('Vuelve a renderizar')
         return (
+            <>
+            <div>
+            <Buscador 
+            actualizador={(data) => this.actualizadorDeEstado(data)}
+            fuente= {this.state.backup}/>
+            </div>
             <div className="">
                 <h1>CARTELERA</h1>
                 <Cartelera peliculas={this.state.peliculas} />
                 <button onClick={()=> this.traerMas()}>Traer más</button>
             </div>
+            </>
         )
     }
 }
