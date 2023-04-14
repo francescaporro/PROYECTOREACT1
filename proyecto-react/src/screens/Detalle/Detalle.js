@@ -5,13 +5,18 @@ export default class Detalle extends Component {
         super(props)
         this.state = {
             id: this.props.match.params.id,
-            detalle: {}
+            detalle: {},
+            genres: ''
+
         }
     }
     componentDidMount() {
         fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=eb09954096929ff16616027732037e32&language=en-US`)
             .then(res => res.json())
-            .then(data => this.setState({ detalle: data }))
+            .then(data => this.setState({ 
+                detalle: data,
+                genres: data.genres[0].name,
+             }))
             .catch(error => console.error(error))
     }
 
@@ -28,16 +33,17 @@ export default class Detalle extends Component {
                         <section>
                             <h2>{this.state.detalle.title}</h2>
                             <img src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} />
-                            <h3>{this.state.detalle.vote_average}</h3>
+                            <h3>Rating: {this.state.detalle.vote_average}</h3>
                             <h3>Fecha de estreno: {this.state.detalle.release_date}</h3>
                             <h3>Duración: {this.state.detalle.runtime}</h3>
                             <h4>Sinopsis: {this.state.detalle.overview}</h4>
+                            <p>Generos: {this.state.genres}</p>
                             
                             <button>Agregar a favoritos</button>
 
                         </section>
                 }
-            </div> //FALTA GENEROS, PERO COMO ES UN ARRAY TENGO DUDAS 
+            </div> 
         )
     }
 }

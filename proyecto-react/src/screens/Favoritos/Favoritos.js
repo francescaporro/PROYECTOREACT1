@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Card from '../../components/Card/Card'
+import CarteleraCard from '../../components/CarteleraCard/CarteleraCard'
+import TvCard from '../../components/TvCard/TvCard'
 export class Favoritos extends Component {
     constructor(props){
         super(props)
@@ -31,6 +33,9 @@ componentDidMount(){
         return (
             <div>
                 <Card peliculas={this.state.favoritos}/>
+                <CarteleraCard peliculas={this.state.favoritos}/>
+                <TvCard series={this.state.favoritos}/>
+
             </div>
         )
     }
