@@ -24,7 +24,7 @@ export default class Detalle extends Component {
         console.log(this.state.detalle)
         return (
             
-            <div>
+            <div className='detalle'>
                 <h1>Detalle</h1>
                 {
                     this.state.detalle === '' ?
@@ -37,7 +37,7 @@ export default class Detalle extends Component {
                             <h3>Fecha de estreno: {this.state.detalle.release_date}</h3>
                             <h3>Duración: {this.state.detalle.runtime}</h3>
                             <h4>Sinopsis: {this.state.detalle.overview}</h4>
-                            <p>Generos: {this.state.genres}</p>
+                            <h4>Generos: {this.state.genres}</h4>
                             
                             <button>Agregar a favoritos</button>
 
