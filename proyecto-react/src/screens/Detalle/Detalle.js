@@ -29,9 +29,9 @@ export default class Detalle extends Component {
                             <h2>{this.state.detalle.title}</h2>
                             <img src={`https://image.tmdb.org/t/p/w342/${this.state.detalle.poster_path}`} />
                             <h3>{this.state.detalle.vote_average}</h3>
-                            <h3>{this.state.detalle.release_date}</h3>
-                            <h3>{this.state.detalle.runtime}</h3>
-                            <h4>{this.state.detalle.overview}</h4>
+                            <h3>Fecha de estreno: {this.state.detalle.release_date}</h3>
+                            <h3>Duración: {this.state.detalle.runtime}</h3>
+                            <h4>Sinopsis: {this.state.detalle.overview}</h4>
                             
                             <button>Agregar a favoritos</button>
 
