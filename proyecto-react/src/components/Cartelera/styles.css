@@ -1,0 +1,14 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+p.hidden {
+    display: none;
+}
+
+
+p.show {
+    display: block;
+}

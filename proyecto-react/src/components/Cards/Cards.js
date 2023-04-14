@@ -27,11 +27,11 @@ class Cards extends Component {
            
             <>
    
-            <section className='cardContainer'>
+            <section>
                 {this.props.peliculas.length <= 0 ?
                     <h2>Cargando...</h2>
                     :
-                    <div>
+                    <div className='cardContainer'>
                         {this.props.peliculas.map((unaPeli, idx) => (
                             <Card
                                 fotoPeli={`https://image.tmdb.org/t/p/w500${unaPeli.poster_path}`}

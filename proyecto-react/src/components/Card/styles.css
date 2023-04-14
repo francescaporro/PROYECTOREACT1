@@ -1,11 +1,16 @@
 
 .watch-display{
-  display: block;
-  color: #777;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  flex-wrap: wrap;
   font-size: 12px;
-  padding: 10px;
+  padding: 5px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  width: 40%;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 15%;
   background: #200e60;
   box-shadow: 0 .10rem 1.75rem 0 #221359;
   
@@ -13,8 +18,17 @@
 
 .watch-display img{
   width: 100%;
-  margin-bottom: 20px; 
+  margin: auto;
+  width: 6cm;
+  margin-left: 0.6cm;
+  margin-right: 0.6cm;
+  margin-bottom: 0.2cm;  
+  margin-top: 0.2cm;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .watch-display:hover,
 .active{
 box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
@@ -24,10 +38,17 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
   color: whitesmoke;
 }
 .watch-display p {
-  margin: 3px 0;
+  margin: 2px;
+  font-size: 12px;
+  color: whitesmoke;
+  text-align: center;
 }
 .watch-display h2 {
   margin: 2px 0;
+  font-size: 22px;
+  text-align: center;
+  color: rgb(198, 198, 207);
+  padding: 1%;
 }
 
 .more:hover,
@@ -40,4 +61,9 @@ box-shadow: 0rem 0rem 10px 8px rgb(58 59 69 / 25%);
 }
 .hide{
   display: none;
+}
+
+.separador{
+  
+  display: block;
 }

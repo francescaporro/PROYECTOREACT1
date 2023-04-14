@@ -38,7 +38,7 @@ componentDidMount(){
             })
         }
     }
-
+ 
     addFav(id){
         let storage = localStorage.getItem('favoritos');
         let deStringAArray = [];
@@ -70,25 +70,28 @@ componentDidMount(){
         return (
 
 
-            <section className='watch-display'>
+            <div className='watch-display'>
 
               
                 <Link to={`/detalle/id/${this.props.id}`}>
                     <img src={this.props.fotoPeli} alt="" />
                     <h2> {this.props.tituloPeli} </h2>
                 </Link>
-                <p className={this.state.clase}> {this.props.detallePeli} </p>
-                <a onClick={() => this.cambiarTexto()}> {this.state.texto} </a>
+                
                 
                    { this.state.esFavorito ?
-                    <button onClick={()=> this.sacarFav(this.props.id)}> Sacar de favoritos </button>
+                    <button className='button' onClick={()=> this.sacarFav(this.props.id)}> Sacar de favoritos </button>
                     :
                     <button className='fav' onClick={()=> this.addFav(this.props.id)}>Favoritos</button>
                 }
     
                 
+                <p className={this.state.clase}> {this.props.detallePeli} </p>
+                <a onClick={() => this.cambiarTexto()}> {this.state.texto} </a>
 
-            </section>
+                
+
+            </div>
 
 
 

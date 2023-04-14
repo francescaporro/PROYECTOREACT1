@@ -70,19 +70,20 @@ class CarteleraCard extends Component {
         return (
 
 
-            <article className='watch-display'>
+            <div className='watch-display'>
                 <img src={this.props.fotoPeli} alt="" />
                 <Link to={`/detalle/id/${this.props.id}`}>
                     <h2> {this.props.tituloPeli} </h2>
                 </Link>
-                <p className={this.state.clase}> {this.props.detallePeli} </p>
-                <a onClick={() => this.cambiarTexto()}> {this.state.texto} </a>
+                
                 { this.state.esFavorito ?
                     <button onClick={()=> this.sacarFav(this.props.id)}> Sacar de favoritos </button>
                     :
                     <button className='fav' onClick={()=> this.addFav(this.props.id)}>Favoritos</button>
                 }
-            </article>
+                <p className={this.state.clase}> {this.props.detallePeli} </p>
+                <a onClick={() => this.cambiarTexto()}> {this.state.texto} </a>
+            </div>
 
 
 

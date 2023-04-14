@@ -78,13 +78,15 @@ class TvCard extends Component {
                     <h2> {this.props.tituloSerie} </h2>
                 </Link>
 
-                <p className={this.state.clase}> {this.props.detalleSerie} </p>
-                <a onClick={() => this.cambiarTexto()}> {this.state.texto} </a>
+                
                  { this.state.esFavorito ?
                     <button onClick={()=> this.sacarFav(this.props.id)}> Sacar de favoritos </button>
                     :
                     <button className='fav' onClick={()=> this.addFav(this.props.id)}>Favoritos</button>
                 }
+
+                <p className={this.state.clase}> {this.props.detalleSerie} </p>
+                <a onClick={() => this.cambiarTexto()}> {this.state.texto} </a>
 
             </section>
 

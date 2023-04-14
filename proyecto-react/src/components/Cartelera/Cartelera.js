@@ -30,11 +30,11 @@ class Cartelera extends Component {
            
             <>
                
-            <section className='cardContainer'>
+            <section >
                 {this.props.peliculas.length <= 0 ?
                     <h2>Caragando...</h2>
                     :
-                    <div>
+                    <div className='cardContainer'>
                         {this.props.peliculas.map((unaPeli, idx) => (
                             <CarteleraCard
                                 fotoPeli={`https://image.tmdb.org/t/p/w500${unaPeli.poster_path}`}

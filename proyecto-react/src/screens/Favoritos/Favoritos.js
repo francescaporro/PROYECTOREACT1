@@ -17,7 +17,7 @@ componentDidMount(){
         Promise.all(
             storageAArray.map(id => {
                 return (
-                    fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=5879ede367a1cc1dbb7ecaf35f419c29&language=en-US&page/${id}')
+                    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=eb09954096929ff16616027732037e32&language=en-US`)
                     .then(resp => resp.json())
                     .then(data => data)
                 )
@@ -28,6 +28,7 @@ componentDidMount(){
         }))
         .catch(err=> console.log(err))
     }
+    
 }
     render() {
         return (

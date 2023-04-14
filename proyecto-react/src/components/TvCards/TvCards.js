@@ -27,11 +27,11 @@ class TvCards extends Component {
            
             <>
    
-            <section className='cardContainer'>
+            <section>
                 {this.props.series.length <= 0 ?
                     <h2>Cargando...</h2>
                     :
-                    <div>
+                    <div className='cardContainer'>
                         {this.props.series.map((unaSerie, idx) => (
                             <TvCard
                                 fotoSerie={`https://image.tmdb.org/t/p/w500${unaSerie.poster_path}`}
