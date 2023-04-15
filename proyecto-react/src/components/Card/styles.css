@@ -6,18 +6,18 @@
   flex-wrap: wrap;
   font-size: 12px;
   padding: 5px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 15%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 20%;
   background: #200e60;
-  box-shadow: 0 .10rem 1.75rem 0 #221359;
+  box-shadow: 0 .15rem 1.80rem 0 #221359;
   
 }
 
 .watch-display img{
-  width: 100%;
+  width: 50%;
   margin: auto;
   width: 6cm;
   margin-left: 0.6cm;

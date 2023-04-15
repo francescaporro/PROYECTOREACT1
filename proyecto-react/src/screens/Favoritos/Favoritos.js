@@ -6,7 +6,8 @@ export class Favoritos extends Component {
     constructor(props){
         super(props)
         this.state ={
-            favoritos: []
+            favoritos: [],
+            favoritoserie: []
         }
     }
 
@@ -28,14 +29,36 @@ componentDidMount(){
         }))
         .catch(err=> console.log(err))
     }
-    
+
+   
+        
+    let storageSerie = localStorage.getItem('favoritoserie')
+    if(storageSerie !== null) {
+        let storageAArray = JSON.parse(storageSerie)
+        Promise.all(
+            storageAArray.map(id => {
+                return (
+                    fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=eb09954096929ff16616027732037e32&language=en-US`)
+                    .then(resp => resp.json())
+                    .then(data => data)
+                )
+            })
+        )
+        .then(data => this.setState({
+            favoritoserie: data
+        }))
+        .catch(err=> console.log(err))
+    }
+     
 }
+
+
     render() {
         return (
             <div>
-                <Card peliculas={this.state.favoritos}/>
+            <CarteleraCard peliculas={this.state.favoritos}/>
                 <CarteleraCard peliculas={this.state.favoritos}/>
-                <TvCard series={this.state.favoritos}/>
+                <TvCard series={this.state.favoritoserie}/>
 
             </div>
         )

@@ -6,7 +6,8 @@ export default class DetalleTV extends Component {
         this.state = {
             id: this.props.match.params.id,
             detalle: {},
-            genres: ''
+            genres: '',
+            esFavorito: false
         }
     }
     componentDidMount() {
@@ -15,6 +16,46 @@ export default class DetalleTV extends Component {
             .then(data => this.setState({ detalle: data ,
                 genres: data.genres[0].name}))
             .catch(error => console.error(error))
+            
+            let storageSerie = localStorage.getItem('favoritoserie')
+            let storageAArray = JSON.parse(storageSerie)
+         
+          if(storageAArray !== null){
+           let estaEnElArray = storageAArray.includes(this.props.id)
+            if(estaEnElArray){
+                this.setState({
+                  esFavorito: true
+                })
+               }
+             }
+    }
+
+    addFav(id){
+        let storageSerie = localStorage.getItem('favoritoserie');
+        let deStringAArray = [];
+        if (storageSerie !== null) {
+           
+          deStringAArray = JSON.parse(storageSerie)
+        }
+        console.log(deStringAArray)
+        deStringAArray.push(id)
+        let arrayAString = JSON.stringify(deStringAArray)
+        localStorage.setItem('favoritoserie', arrayAString)
+        this.setState({
+          esFavorito: true
+        })
+      }
+
+      sacarFav(id){
+        let storageSerie = localStorage.getItem('favoritoserie')
+        let storageAArray = JSON.parse(storageSerie)
+       let filtro =  storageAArray.filter((elm)=>elm !== id)
+       let filtroAString = JSON.stringify(filtro)
+       localStorage.setItem('favoritoserie', filtroAString)
+
+       this.setState({
+           esFavorito: false
+       })
     }
 
     render() {
@@ -35,11 +76,16 @@ export default class DetalleTV extends Component {
                             <h4>Sinopsis: {this.state.detalle.overview}</h4>
                             <h4>Generos: {this.state.genres}</h4>
                             
-                            <button>Agregar a favoritos</button>
+                            { this.state.esFavorito ?
+                    <button onClick={()=> this.sacarFav(this.props.id)}> Sacar de favoritos </button>
+                    :
+                    <button className='fav' onClick={()=> this.addFav(this.props.id)}>Favoritos</button>
+                }
+                    
 
                         </section>
                 }
-            </div> //FALTA GENEROS, PERO COMO ES UN ARRAY TENGO DUDAS 
+            </div> 
         )
     }
 }

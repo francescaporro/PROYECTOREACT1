@@ -12,8 +12,8 @@ class TvCard extends Component {
         }
     }
     componentDidMount(){
-        let storage = localStorage.getItem('favoritos')
-         let storageAArray = JSON.parse(storage)
+        let storageSerie = localStorage.getItem('favoritoserie')
+         let storageAArray = JSON.parse(storageSerie)
       
        if(storageAArray !== null){
         let estaEnElArray = storageAArray.includes(this.props.id)
@@ -41,27 +41,27 @@ class TvCard extends Component {
     }
 
     addFav(id){
-        let storage = localStorage.getItem('favoritos');
+        let storageSerie = localStorage.getItem('favoritoserie');
         let deStringAArray = [];
-        if (storage !== null) {
+        if (storageSerie !== null) {
            
-          deStringAArray = JSON.parse(storage)
+          deStringAArray = JSON.parse(storageSerie)
         }
         console.log(deStringAArray)
         deStringAArray.push(id)
         let arrayAString = JSON.stringify(deStringAArray)
-        localStorage.setItem('favoritos', arrayAString)
+        localStorage.setItem('favoritoserie', arrayAString)
         this.setState({
           esFavorito: true
         })
       }
 
       sacarFav(id){
-        let storage = localStorage.getItem('favoritos')
-        let storageAArray = JSON.parse(storage)
+        let storageSerie = localStorage.getItem('favoritoserie')
+        let storageAArray = JSON.parse(storageSerie)
        let filtro =  storageAArray.filter((elm)=>elm !== id)
        let filtroAString = JSON.stringify(filtro)
-       localStorage.setItem('favoritos', filtroAString)
+       localStorage.setItem('favoritoserie', filtroAString)
 
        this.setState({
            esFavorito: false
