@@ -41,21 +41,24 @@ class TvCard extends Component {
     }
 
     addFav(id){
-        let storageSerie = localStorage.getItem('favoritoserie');
-        let deStringAArray = [];
-        if (storageSerie !== null) {
-           
-          deStringAArray = JSON.parse(storageSerie)
+        let storage = localStorage.getItem('favoritos')
+    
+        if(storage === null){
+          let idEnArray = [id]
+          let arrayAString = JSON.stringify(idEnArray)
+          localStorage.setItem('favoritos', arrayAString)
+    
+        } else {
+          let deStringAArray = JSON.parse(storage) 
+          deStringAArray.push(id)
+          let arrayAString = JSON.stringify(deStringAArray)
+          localStorage.setItem('favoritos', arrayAString)
         }
-        console.log(deStringAArray)
-        deStringAArray.push(id)
-        let arrayAString = JSON.stringify(deStringAArray)
-        localStorage.setItem('favoritoserie', arrayAString)
+    
         this.setState({
           esFavorito: true
         })
       }
-
       sacarFav(id){
         let storageSerie = localStorage.getItem('favoritoserie')
         let storageAArray = JSON.parse(storageSerie)

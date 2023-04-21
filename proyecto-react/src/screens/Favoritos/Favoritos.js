@@ -56,7 +56,7 @@ componentDidMount(){
     render() {
         return (
             <div>
-            <CarteleraCard peliculas={this.state.favoritos}/>
+            <Card peliculas={this.state.favoritos}/>
                 <CarteleraCard peliculas={this.state.favoritos}/>
                 <TvCard series={this.state.favoritoserie}/>
 

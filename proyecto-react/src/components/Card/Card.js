@@ -40,16 +40,20 @@ componentDidMount(){
     }
  
     addFav(id){
-        let storage = localStorage.getItem('favoritos');
-        let deStringAArray = [];
-        if (storage !== null) {
-           
-          deStringAArray = JSON.parse(storage)
+        let storage = localStorage.getItem('favoritos')
+    
+        if(storage === null){
+          let idEnArray = [id]
+          let arrayAString = JSON.stringify(idEnArray)
+          localStorage.setItem('favoritos', arrayAString)
+    
+        } else {
+          let deStringAArray = JSON.parse(storage) 
+          deStringAArray.push(id)
+          let arrayAString = JSON.stringify(deStringAArray)
+          localStorage.setItem('favoritos', arrayAString)
         }
-        console.log(deStringAArray)
-        deStringAArray.push(id)
-        let arrayAString = JSON.stringify(deStringAArray)
-        localStorage.setItem('favoritos', arrayAString)
+    
         this.setState({
           esFavorito: true
         })
